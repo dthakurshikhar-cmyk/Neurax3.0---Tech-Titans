@@ -1,11 +1,4 @@
 # Neurax3.0-Tech-Titans
-# Identity Intelligence Engine
-
-**AI-powered OSINT for fast, verifiable identity lookups**
-
-> Built for **Neurax Hackathon 3.0** — Domain 3: AI in Cybersecurity
-
----
 
 ## The Problem
 
@@ -31,7 +24,7 @@ An autonomous **OSINT (Open-Source Intelligence) Identity Verification System**.
 
 ```mermaid
 flowchart TD
-    A[Candidate Consent & Input] --> B[Photo + Resume Name/Handle]
+    A[User Consent & Input] --> B[Photo + Name/Company/Handle]
     B --> C[Initial Anchor Extraction]
     C --> D[Generate Name & Handle Variations]
     D --> E[Targeted OSINT Discovery]
@@ -47,11 +40,11 @@ flowchart TD
     I --> J[Confidence Score Calculation]
     J --> K[Audit Log & Evidence Compilation]
     K --> L[Interactive Identity Dossier]
-    L --> M[HR / Recruiter Verification]
+    L --> M[Organization Verification]
 ```
 
 ### 1. Initial Anchor Extraction
-The consented candidate photo is converted into a facial embedding vector, while resume data is used to generate likely name and handle variations.
+The consented photo is converted into a facial embedding vector, while the basic details supplied (name, company, handle, etc.) are used to generate likely name and handle variations.
 
 - **Tools:** `InsightFace`, `OpenCV`
 
@@ -70,9 +63,21 @@ Rather than returning a raw list of links, discovered accounts are cross-referen
 - **Tools:** `NetworkX` (identity graph), local SLMs via `Ollama` / `Llama-3` (linguistic analysis)
 
 ### 4. Audit Reporting & Confidence Scoring
-Verified identities are merged into a weighted trust score and compiled into an immutable audit log with direct source URLs — so HR teams can see exactly *why* an account was linked to a candidate.
+Verified identities are merged into a weighted trust score and compiled into an immutable audit log with direct source URLs — so the requesting organization can see exactly *why* an account was linked to the individual.
 
 - **Tools:** `Pydantic` (structured audit logs), `Streamlit` / `Next.js` (interactive frontend)
+
+---
+
+## Additional AI Innovations
+
+Beyond the core pipeline, we layer in a few custom AI components to make matching smarter and more resilient than a simple rules-based lookup:
+
+- **Custom Fusion Model** — Rather than treating face similarity, writing style, and contextual links as three separate scores, we train a lightweight custom model that learns how to weigh and combine these signals together, producing a single calibrated trust score instead of a hand-tuned average.
+- **Adaptive Query Agent** — An LLM-driven agent that reasons about *where* to search next based on what it has already found — for example, spotting a mentioned employer or project in one profile and automatically generating new, targeted OSINT queries around it, rather than following a fixed search list.
+- **Semantic Profile Matching** — Profile bios, posts, and commit messages are embedded into a shared vector space so the system can recognize the *same person* even when names, handles, or wording differ significantly across platforms.
+- **Anomaly & Inconsistency Detection** — A dedicated model flags contradictions across discovered sources (e.g. conflicting employers, timelines, or claimed skills), surfacing potential fraud signals for human review instead of silently averaging them away.
+- **Self-Improving Feedback Loop** — Verifier decisions (confirmed / rejected matches) are fed back into the system to continuously refine the fusion model's weighting over time.
 
 ---
 
@@ -84,6 +89,7 @@ Verified identities are merged into a weighted trust score and compiled into an 
 | Backend / Data Collection | Python, FastAPI |
 | Graph & Relationship Mapping | NetworkX |
 | Language Analysis | Ollama, Llama-3 (local SLMs) |
+| Custom Fusion & Scoring Model | Custom-trained model (in-house) |
 | Data Validation | Pydantic |
 | Frontend | Streamlit or Next.js |
 
@@ -91,7 +97,7 @@ Verified identities are merged into a weighted trust score and compiled into an 
 
 ## Ethics & Compliance
 
-This system is built around a strict consent-first, rights-respecting design:
+This system is built around a strict consent-first, rights-respecting design. It works only with information the user has explicitly agreed to submit, and every finding traces back to a public source:
 
 - Operates only on **public, consented, and authorized** information
 - No bypassing of access controls
@@ -102,9 +108,9 @@ This system is built around a strict consent-first, rights-respecting design:
 
 ## Impacted Audiences
 
-- **Corporate HR & Recruitment Teams** — faster, more reliable candidate vetting
+- **Organizations & Verification Teams** — faster, more reliable identity checks with minimal input
 - **Enterprise Trust & Security Teams** — reduced exposure to insider threats and identity spoofing
-- **Job Seekers & Professionals** — a fast, verifiable way to showcase authentic accomplishments
+- **Individuals** — a fast, verifiable way to confirm their genuine public presence
 
 ---
 
