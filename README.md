@@ -1,6 +1,7 @@
 # Neurax3.0-Tech-Titans
+# Identity Intelligence Engine
 
-**AI-powered OSINT for verifiable, fraud-resistant hiring**
+**AI-powered OSINT for fast, verifiable identity lookups**
 
 > Built for **Neurax Hackathon 3.0** — Domain 3: AI in Cybersecurity
 
@@ -8,21 +9,21 @@
 
 ## The Problem
 
-A candidate's professional footprint is scattered across GitHub, LinkedIn, personal portfolios, academic repositories, and conference speaker lists — often under different usernames, aliases, or spellings. That fragmentation creates real risk on both sides of the hiring table:
+A person's digital footprint is scattered across GitHub, LinkedIn, personal portfolios, academic repositories, and conference speaker lists — often under different usernames, aliases, or spellings. When an organization only has a small starting point (a photo, a name, a company), piecing together a verified picture of that person is slow and error-prone:
 
 | Who's affected | The pain point |
 |---|---|
-| **HR & Recruitment Teams** | Manual background checks are slow, tedious, and error-prone |
-| **Trust & Security Teams** | Exposed to insider threats and spoofed digital identities |
-| **Job Seekers** | No easy way to cryptographically prove their scattered achievements are genuinely theirs |
+| **Organizations & Verification Teams** | Manual identity checks are slow, tedious, and easy to get wrong |
+| **Trust & Security Teams** | Exposed to insider threats and spoofed or impersonated identities |
+| **Individuals** | Have no easy way to have their scattered, genuine public presence quickly and accurately confirmed |
 
-Bad-faith candidates exploit this friction to inflate credentials or claim work that isn't theirs. Legitimate candidates pay the price with slower, less trusting hiring cycles.
+Fragmented, inconsistent identifiers make it easy for bad actors to hide behind misleading or fabricated profiles — and hard for legitimate identities to be confirmed quickly.
 
 ---
 
 ## Our Solution
 
-An autonomous **OSINT (Open-Source Intelligence) and Resume Verification System** that turns a candidate's consented photo and resume metadata into a single, evidence-backed identity dossier — closing the gap between what a resume *claims* and what's *publicly verifiable*.
+An autonomous **OSINT (Open-Source Intelligence) Identity Verification System**. A user submits a small seed of information — a photo plus basic details like name and company — and the system automatically discovers, correlates, and verifies that person's fragmented public footprint into a single, evidence-backed identity dossier for the requesting organization.
 
 ---
 
