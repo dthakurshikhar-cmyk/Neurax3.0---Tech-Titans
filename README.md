@@ -1,5 +1,4 @@
 # Neurax3.0-Tech-Titans
-
 ## The Problem
 
 A person's digital footprint is scattered across GitHub, LinkedIn, personal portfolios, academic repositories, and conference speaker lists — often under different usernames, aliases, or spellings. When an organization only has a small starting point (a photo, a name, a company), piecing together a verified picture of that person is slow and error-prone:
@@ -17,6 +16,8 @@ Fragmented, inconsistent identifiers make it easy for bad actors to hide behind 
 ## Our Solution
 
 An autonomous **OSINT (Open-Source Intelligence) Identity Verification System**. A user submits a small seed of information — a photo plus basic details like name and company — and the system automatically discovers, correlates, and verifies that person's fragmented public footprint into a single, evidence-backed identity dossier for the requesting organization.
+
+What sets this apart from a simple rules-based lookup is a layer of custom AI woven through the pipeline: a **custom-trained fusion model** learns how to weigh and combine facial similarity, writing style, and contextual signals into one calibrated trust score, rather than relying on a hand-tuned average. An **adaptive query agent** reasons about where to search next — spotting a mentioned employer or project in one profile and automatically generating new, targeted OSINT queries around it. Profile bios, posts, and commit messages are embedded into a shared vector space for **semantic matching**, so the system recognizes the same person even when names or wording differ across platforms. A dedicated **anomaly detection** model flags contradictions across sources — conflicting employers, timelines, or claimed skills — for human review instead of silently averaging them away. And verifier decisions feed back into the system, letting the fusion model's weighting **continuously improve** over time.
 
 ---
 
