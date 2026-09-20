@@ -70,6 +70,65 @@ This system is built around a strict consent-first, rights-respecting design. It
 
 ---
 
+## Getting Started
+
+This repository intentionally leaves out heavy dependency folders like `node_modules` and Python virtual environments to keep it fast and clean on GitHub. You'll need to initialize them locally before running the app.
+
+**Prerequisites:**
+
+- [Python 3.8+](https://www.python.org/)
+- [Node.js](https://nodejs.org/)
+- [Ollama](https://ollama.com/)
+
+### 1. Initialize Local AI Models (Ollama)
+
+The system relies on local SLMs for language and semantic analysis. Install Ollama, then pull the required model:
+
+```bash
+ollama pull llama3
+```
+
+### 2. Initialize Backend (Python Dependencies)
+
+Open a terminal, navigate to the backend directory, set up a virtual environment, and install the required Python libraries:
+
+```bash
+cd backend
+
+# Create a virtual environment (keeps dependencies isolated)
+python -m venv venv
+
+# Activate the virtual environment
+# On Mac/Linux:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+
+# Install all required Python packages into the venv
+pip install -r requirements.txt
+
+# Boot the FastAPI server
+uvicorn main:app --reload --port 8000
+```
+
+### 3. Initialize Frontend (Node Modules)
+
+Open a new terminal window, navigate to the frontend directory, and run the install command — this is the step that generates the `node_modules` folder on your machine:
+
+```bash
+cd frontend
+
+# Install Node modules (React, Vite, Lucide, Force-Graph, etc.)
+npm install
+
+# Start the development dashboard
+npm run dev
+```
+
+Once all three are running, the backend API, local AI model, and frontend dashboard will be live and connected.
+
+---
+
 ## Status
 
 Prototype built for Neurax Hackathon 3.0 (Domain 3: AI in Cybersecurity).
