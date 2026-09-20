@@ -1,0 +1,14 @@
+fastapi>=0.115.0
+uvicorn>=0.31.0
+python-multipart>=0.0.12
+duckduckgo-search>=6.0.0
+requests>=2.32.0
+httpx>=0.28.0
+beautifulsoup4>=4.12.3
+deepface>=0.0.96
+opencv-python-headless>=4.10.0.84
+pillow>=11.0.0
+numpy>=2.1.0
+google-genai>=0.1.1
+openai>=1.50.0
+pydantic>=2.9.0
